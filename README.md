@@ -5,3 +5,10 @@ Just some code to track some basics of the C language for personal reference. To
 - Header Files
 - Global Variables
 - Static Variables
+
+
+
+To Do:
+
+- Figure out the size of functions (stack size)
+- Do some sizeof variables
