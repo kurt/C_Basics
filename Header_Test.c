@@ -11,7 +11,7 @@
 int global_test_variable=12212;
 
 int main(){
-	int i, result, input;
+	int i, result, input, *data_pointer;
 	//extern int global_test_variable;
 	printf("---------------------------------\n\r");
 	printf("This is the beginning of the file\n\r");
@@ -23,4 +23,6 @@ int main(){
 	printf("%d is the answer\n\r",result);
 	printf("Inside MAIN %d\n\r",global_test_variable);
 	get_sizes();
+	data_pointer=allocate_data();
+	printf("Pointer in Main: %d",data_pointer[0]);
 }

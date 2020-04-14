@@ -5,10 +5,15 @@ Just some code to track some basics of the C language for personal reference. To
 - Header Files
 - Global Variables
 - Static Variables
+- "sizeof" variables
+- Malloc()
+- Pointers returned from functions
 
 
 
 To Do:
 
-- Figure out the size of functions (stack size)
-- Do some sizeof variables
+- Figure out the size of functions (stack size) - this is done through linker/compiler options
+- Pointers
+- Free()
+
