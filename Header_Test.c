@@ -22,4 +22,5 @@ int main(){
 	}
 	printf("%d is the answer\n\r",result);
 	printf("Inside MAIN %d\n\r",global_test_variable);
+	get_sizes();
 }
