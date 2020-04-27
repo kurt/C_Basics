@@ -14,6 +14,8 @@ Just some code to track some basics of the C language for personal reference.
 - Pointers
   -  returned from functions
   - dereferencing
+  - generic pointers (void *ptr)
+  - passing data into/out of functions
 
 
 

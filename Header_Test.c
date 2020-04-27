@@ -31,4 +31,6 @@ int main(){
 	basic_pointer();
 	dereference_pointer();
 	structure_size();
+	generic_pointer_example();
+	parent_pass_data_using_pointers();
 }

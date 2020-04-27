@@ -34,5 +34,7 @@ void structure_size();
 // Pointer_Functions.c
 void basic_pointer();
 void dereference_pointer();
-
+void generic_pointer_example();
+void parent_pass_data_using_pointers();
+void child_pass_data_using_pointers(int *a, int *b, int *c);
 #endif //end of Header File
