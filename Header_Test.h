@@ -37,4 +37,7 @@ void dereference_pointer();
 void generic_pointer_example();
 void parent_pass_data_using_pointers();
 void child_pass_data_using_pointers(int *a, int *b, int *c);
+void pass_a_function_to_another();
+void receive_a_function_ptr(int (*local_func_alias)(int input_a, int input_b));
+int function_to_be_passed(int a, int b);
 #endif //end of Header File

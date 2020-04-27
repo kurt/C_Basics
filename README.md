@@ -16,13 +16,13 @@ Just some code to track some basics of the C language for personal reference.
   - dereferencing
   - generic pointers (void *ptr)
   - passing data into/out of functions
+  - passing functions with pointers (functional programming)
 
 
 
 **To Do:**
 
 - Figure out the size of functions (stack size) - this is done through linker/compiler options
-- Pointers: Multiple data passed to and from functions 
 - Pointers: accessing elements in an array
 - Pointers: passing stings and arrays to functions
 - type casting
