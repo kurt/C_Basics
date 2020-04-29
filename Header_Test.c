@@ -34,4 +34,5 @@ int main(){
 	generic_pointer_example();
 	parent_pass_data_using_pointers();
 	pass_a_function_to_another();
+	pass_an_array();
 }

@@ -17,13 +17,15 @@ Just some code to track some basics of the C language for personal reference.
   - generic pointers (void *ptr)
   - passing data into/out of functions
   - passing functions with pointers (functional programming)
+  - passing arrays into functions - this is done using pointers
+- Arrays
+  - passed to functions
 
 
 
 **To Do:**
 
-- Figure out the size of functions (stack size) - this is done through linker/compiler options
-- Pointers: accessing elements in an array
+- ~~Figure out the size of functions (stack size) - this is done through linker/compiler options~~
 - Pointers: passing stings and arrays to functions
 - type casting
   - pointers: addr= (structure_name *)function(function_input); 

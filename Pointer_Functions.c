@@ -45,7 +45,7 @@ void child_pass_data_using_pointers(int *a, int *b, int *c){
 	*c=*a+*b;
 }
 
-
+// Passing a function to another ----------
 void pass_a_function_to_another(){
 	receive_a_function_ptr(&function_to_be_passed);
 }
@@ -60,4 +60,32 @@ void receive_a_function_ptr(int (*local_func_alias)(int input_a, int input_b)){
 int function_to_be_passed(int a, int b){
 	int res=a+b;
 	return res;
+}
+// end passing a function to another -----------
+
+void pass_an_array(){
+	int len = 8;
+	int array[len];
+	int *ptr;
+	ptr=array;
+	receive_an_array(ptr,len);
+	for(int i=0;i<len;i++){
+		printf("The array value=%d\n\r",array[i]);
+	}
+	receive_an_array2(array,len);
+	for(int i=0;i<len;i++){
+		printf("The array value=%d\n\r",array[i]);
+	}
+}
+
+void receive_an_array(int *arr, int length){
+	for(int i=0;i<length;i++){
+			arr[i]=i;
+	}
+}
+
+void receive_an_array2(int *arr, int length){
+	for(int i=0;i<length;i++){
+			arr[i]=2*i;
+	}
 }
