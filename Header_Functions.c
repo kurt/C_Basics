@@ -59,3 +59,6 @@ void structure_size(){
 	printf("Size of struct: %ld bits\n\r",8*sizeof(CAN_Struct));
 	return;
 }
+
+
+

@@ -22,6 +22,11 @@ typedef	struct{
 	uint8_t data[8];
 	uint8_t FilterMatchIndex;
 }canPacketShortened;
+// Inline Function Definitions
+//inline function
+static inline void inline_func(){
+  printf("Inline function called\n\r");
+}
 
 
 // Function Definitions -----------------------------------
@@ -43,4 +48,7 @@ int function_to_be_passed(int a, int b);
 void pass_an_array();
 void receive_an_array(int *arr, int length);
 void receive_an_array2(int *arr, int length);
+
+
+
 #endif //end of Header File
