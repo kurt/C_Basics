@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - testout - DataStructures/LinkeListFunctions.c</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">DataStructures</a> - LinkeListFunctions.c<span style="font-size: 80%;"> (source / <a href="LinkeListFunctions.c.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">testout</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">63</td>
+            <td class="headerCovTableEntry">63</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2021-03-12 10:30:42</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : #include &quot;LinkedList.h&quot;</a>
+<span class="lineNum">       2 </span>            : 
+<span class="lineNum">       3 </span><span class="lineCov">          1 : struct node *create_ll(struct node *start){</span>
+<span class="lineNum">       4 </span>            :     struct node *new_node;
+<span class="lineNum">       5 </span>            :     int num;
+<span class="lineNum">       6 </span><span class="lineCov">          7 :     for(int i=0;i&lt;6;i++){</span>
+<span class="lineNum">       7 </span><span class="lineCov">          6 :         new_node = (struct node*)malloc(sizeof(struct node*));</span>
+<span class="lineNum">       8 </span><span class="lineCov">          6 :         new_node -&gt; data = i;</span>
+<span class="lineNum">       9 </span><span class="lineCov">          6 :         if(start == NULL){</span>
+<span class="lineNum">      10 </span><span class="lineCov">          1 :             new_node -&gt; next = NULL;</span>
+<span class="lineNum">      11 </span><span class="lineCov">          1 :             start = new_node;</span>
+<span class="lineNum">      12 </span>            :         }
+<span class="lineNum">      13 </span>            :         else{
+<span class="lineNum">      14 </span><span class="lineCov">          5 :             new_node-&gt;next = start;</span>
+<span class="lineNum">      15 </span><span class="lineCov">          5 :             start = new_node;</span>
+<span class="lineNum">      16 </span>            :         }
+<span class="lineNum">      17 </span>            :     }
+<span class="lineNum">      18 </span><span class="lineCov">          1 :     return start;</span>
+<a name="19"><span class="lineNum">      19 </span>            : }</a>
+<span class="lineNum">      20 </span>            : 
+<span class="lineNum">      21 </span><span class="lineCov">          1 : struct node * display(struct node *start){</span>
+<span class="lineNum">      22 </span>            :     struct node *ptr;
+<span class="lineNum">      23 </span><span class="lineCov">          1 :     ptr = start;</span>
+<span class="lineNum">      24 </span><span class="lineCov">          1 :     printf(&quot;\n&quot;);</span>
+<span class="lineNum">      25 </span><span class="lineCov">         13 :     while(ptr != NULL){</span>
+<span class="lineNum">      26 </span><span class="lineCov">         11 :         printf(&quot;\t %d&quot;, ptr -&gt; data);</span>
+<span class="lineNum">      27 </span><span class="lineCov">         11 :         ptr = ptr-&gt;next;</span>
+<span class="lineNum">      28 </span>            :     }
+<span class="lineNum">      29 </span><span class="lineCov">          1 :     printf(&quot;\n&quot;);</span>
+<span class="lineNum">      30 </span><span class="lineCov">          1 :     return start;</span>
+<a name="31"><span class="lineNum">      31 </span>            : }</a>
+<span class="lineNum">      32 </span>            : 
+<span class="lineNum">      33 </span><span class="lineCov">          2 : struct node *insert_beg(struct node *start){</span>
+<span class="lineNum">      34 </span>            :     struct node *new_node;
+<span class="lineNum">      35 </span><span class="lineCov">          2 :     int num = 99;</span>
+<span class="lineNum">      36 </span><span class="lineCov">          2 :     new_node=(struct node *)malloc(sizeof(struct node *));</span>
+<span class="lineNum">      37 </span><span class="lineCov">          2 :     new_node-&gt;data = num;</span>
+<span class="lineNum">      38 </span><span class="lineCov">          2 :     new_node-&gt;next = start;</span>
+<span class="lineNum">      39 </span><span class="lineCov">          2 :     start = new_node;</span>
+<span class="lineNum">      40 </span><span class="lineCov">          2 :     return start;</span>
+<a name="41"><span class="lineNum">      41 </span>            : }</a>
+<span class="lineNum">      42 </span>            : 
+<span class="lineNum">      43 </span><span class="lineCov">          2 : struct node * insert_end(struct node *start){</span>
+<span class="lineNum">      44 </span>            : /*
+<span class="lineNum">      45 </span>            :     Returns: a pointer to a node structure
+<span class="lineNum">      46 </span>            :     Takes:   pointer to a node structure
+<span class="lineNum">      47 </span>            :     Modifies: the linked list
+<span class="lineNum">      48 </span>            : */
+<span class="lineNum">      49 </span>            :     struct node *ptr, *new_node;
+<span class="lineNum">      50 </span><span class="lineCov">          2 :     int new_data = 10;</span>
+<span class="lineNum">      51 </span><span class="lineCov">          2 :     new_node = (struct node *)malloc(sizeof(struct node *));</span>
+<span class="lineNum">      52 </span><span class="lineCov">          2 :     new_node-&gt;data = new_data;</span>
+<span class="lineNum">      53 </span><span class="lineCov">          2 :     ptr = start;</span>
+<span class="lineNum">      54 </span><span class="lineCov">         18 :     while(ptr-&gt;next != NULL){</span>
+<span class="lineNum">      55 </span><span class="lineCov">         14 :         ptr = ptr-&gt;next;</span>
+<span class="lineNum">      56 </span>            :     }
+<span class="lineNum">      57 </span><span class="lineCov">          2 :     ptr-&gt;next = new_node;</span>
+<span class="lineNum">      58 </span><span class="lineCov">          2 :     new_node-&gt;next = NULL;</span>
+<span class="lineNum">      59 </span><span class="lineCov">          2 :     return start;</span>
+<a name="60"><span class="lineNum">      60 </span>            : }</a>
+<span class="lineNum">      61 </span>            : 
+<span class="lineNum">      62 </span><span class="lineCov">          4 : struct node * insert_location(struct node *start, int position){</span>
+<span class="lineNum">      63 </span><span class="lineCov">          4 :     if(position&gt;(list_length(start)+1)){</span>
+<span class="lineNum">      64 </span><span class="lineCov">          1 :         printf(&quot;Out of range\n\r&quot;);</span>
+<span class="lineNum">      65 </span><span class="lineCov">          1 :         return start;</span>
+<span class="lineNum">      66 </span>            :         //perror(&quot;position out of range&quot;);
+<span class="lineNum">      67 </span>            :         //exit(EXIT_FAILURE);
+<span class="lineNum">      68 </span>            :     }
+<span class="lineNum">      69 </span><span class="lineCov">          3 :     int END_FLAG = 0;</span>
+<span class="lineNum">      70 </span><span class="lineCov">          3 :     if(position == list_length(start)+1){</span>
+<span class="lineNum">      71 </span><span class="lineCov">          1 :         start = insert_end(start);</span>
+<span class="lineNum">      72 </span><span class="lineCov">          1 :         return start;</span>
+<span class="lineNum">      73 </span>            :     }
+<span class="lineNum">      74 </span><span class="lineCov">          2 :     if(position == 0){</span>
+<span class="lineNum">      75 </span>            :          //do nothing
+<span class="lineNum">      76 </span><span class="lineCov">          1 :          start = insert_beg(start);</span>
+<span class="lineNum">      77 </span><span class="lineCov">          1 :          return start; </span>
+<span class="lineNum">      78 </span>            :     }
+<span class="lineNum">      79 </span>            :     struct node *ptr, *new_node;
+<span class="lineNum">      80 </span><span class="lineCov">          1 :     int new_data = 333, count =0;</span>
+<span class="lineNum">      81 </span><span class="lineCov">          1 :     new_node = (struct node *)malloc(sizeof(struct node *));</span>
+<span class="lineNum">      82 </span><span class="lineCov">          1 :     new_node -&gt; data = new_data;</span>
+<span class="lineNum">      83 </span><span class="lineCov">          1 :     ptr = start;</span>
+<span class="lineNum">      84 </span><span class="lineCov">          4 :     while(count &lt; position-1 &amp;&amp; ptr-&gt;next !=NULL){</span>
+<span class="lineNum">      85 </span><span class="lineCov">          2 :          ptr = ptr-&gt;next;</span>
+<span class="lineNum">      86 </span>            :          //could throw a runtime error here if list length is an issue;
+<span class="lineNum">      87 </span><span class="lineCov">          2 :          count++;</span>
+<span class="lineNum">      88 </span>            :     }
+<span class="lineNum">      89 </span><span class="lineCov">          1 :     new_node-&gt;next = ptr-&gt;next;</span>
+<span class="lineNum">      90 </span><span class="lineCov">          1 :     ptr-&gt;next = new_node;</span>
+<span class="lineNum">      91 </span><span class="lineCov">          1 :     return start;</span>
+<a name="92"><span class="lineNum">      92 </span>            : }</a>
+<span class="lineNum">      93 </span>            : 
+<span class="lineNum">      94 </span><span class="lineCov">         19 : int list_length(struct node *start){</span>
+<span class="lineNum">      95 </span><span class="lineCov">         19 :     int count = 0;</span>
+<span class="lineNum">      96 </span>            :     struct node *ptr;
+<span class="lineNum">      97 </span><span class="lineCov">         19 :     ptr = start;</span>
+<span class="lineNum">      98 </span><span class="lineCov">        185 :     while(ptr-&gt;next != NULL){</span>
+<span class="lineNum">      99 </span><span class="lineCov">        147 :         ptr=ptr-&gt;next;</span>
+<span class="lineNum">     100 </span><span class="lineCov">        147 :         count++;</span>
+<span class="lineNum">     101 </span>            :     }
+<span class="lineNum">     102 </span><span class="lineCov">         19 :     return count;</span>
+<span class="lineNum">     103 </span>            : }
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.12</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
