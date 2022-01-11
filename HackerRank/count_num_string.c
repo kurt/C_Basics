@@ -61,6 +61,9 @@ int main() {
         printf("%d ", count[j]);
     }
     printf("\n");
+
+    //free pointer s
+    free(s);
     return 0;
 }
 
