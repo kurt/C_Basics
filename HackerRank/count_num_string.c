@@ -3,16 +3,27 @@
 #include <math.h>
 #include <stdlib.h>
 
+
 int main() {
 
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
     char *s;
     s = malloc(1024 * sizeof(char));
     scanf("%[^\n]", s);
-    s = realloc(s,strlen(s) +1);
+    char *tmp = realloc(s,strlen(s) +1);
+    if (NULL == tmp)
+    {
+        printf("error occured with realloc\n\r");
+        free(s);
+    }
+    else
+    {
+        s = tmp;
+    }
     //printf("%s\n", s);
+    
     size_t length;
-     length = strlen(s); 
+    length = strlen(s); 
     int count[10] = {0};
     int y;    
     int i = 0;
