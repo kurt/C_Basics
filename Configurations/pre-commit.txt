@@ -1,0 +1,13 @@
+#to have this run chmod +x pre-commit
+
+#run uncrustify
+echo "* Did you run uncrustify? - uncrustify -c ~/uncrustify.cfg --no-backup *.cpp"
+
+#run cppcheck
+echo "* Did you run cppcheck? - cppcheck --std=c++20 . >cppCheck.txt"
+
+#run valgrind
+echo "* Did you run valgrind? - valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./test"
+
+echo "----------------------"
+
