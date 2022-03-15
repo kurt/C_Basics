@@ -3,7 +3,6 @@
 typedef struct{
   int val1;
   int val2;
-
 }inputs;
 
 
@@ -26,6 +25,7 @@ typedef struct {
 }student;
 
 // function declaration
+int genVal();
 void functionToPass(inputs t, parameters p);
 void getDetail(student *);
 void displayDetail(student *, int numPeople);
@@ -105,6 +105,7 @@ void initStudent(student *ptr, int numPeople){
   char* name = "Tommy";
   char* lastname = "Gunner";
   float value =10;
+  int vGen;
   
   for (int i = 0; i < numPeople; i++) {
       ptr->points = value;
@@ -112,7 +113,8 @@ void initStudent(student *ptr, int numPeople){
       ptr->lastname = lastname;
       ptr->id = id;
       ptr->stateMethod = &functionToPass;
-      parameters vals = {.val = 1, .max = 122, .try = 555};
+      vGen = genVal();
+      parameters vals = {.val = 1, .max = vGen, .try = 555};
       ptr->limits = vals;
       ptr++;
   }
@@ -122,6 +124,11 @@ void functionToPass(inputs t, parameters p){
    printf("The passed function ran\n\r");
    printf("Val = %d\n\r", t.val1);
    printf("Limits in func = %d\n\r", p.max);
+}
+
+int genVal(){
+   int retVal = 10;
+   return retVal;
 }
  
 
