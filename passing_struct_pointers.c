@@ -1,16 +1,32 @@
 #include <stdio.h>
-    
+
+typedef struct{
+  int val1;
+  int val2;
+
+}inputs;
+
+
+typedef struct{
+  int val;
+  int max;
+  int try;
+}parameters;    
+
+
 // student structure
 typedef struct {
   char *id;
   char *firstname;
   char *lastname;
   float points;
-  void (*stateMethod)(void);
+  parameters limits;
+  inputs in;
+  void (*stateMethod)(inputs,parameters);
 }student;
 
 // function declaration
-void functionToPass(void);
+void functionToPass(inputs t, parameters p);
 void getDetail(student *);
 void displayDetail(student *, int numPeople);
 void initStudent(student *, int numPeople);
@@ -73,7 +89,9 @@ void displayDetail(student *ptr, int numPeople) {
     printf("First Name: %s\n", ptr->firstname);
     printf("Last Name: %s\n", ptr->lastname);
     printf("Points: %f\n", ptr->points);
-    ptr->stateMethod();
+    printf("Max Parameters %d\n", ptr->limits.max);
+    inputs vals = {.val1 = 22, .val2 = 21};
+    ptr->stateMethod(vals,ptr->limits);
     
     // update pointer to point at next element
     // of the array std
@@ -94,13 +112,16 @@ void initStudent(student *ptr, int numPeople){
       ptr->lastname = lastname;
       ptr->id = id;
       ptr->stateMethod = &functionToPass;
+      parameters vals = {.val = 1, .max = 122, .try = 555};
+      ptr->limits = vals;
       ptr++;
   }
 }
 
-void functionToPass(void){
+void functionToPass(inputs t, parameters p){
    printf("The passed function ran\n\r");
-
+   printf("Val = %d\n\r", t.val1);
+   printf("Limits in func = %d\n\r", p.max);
 }
  
 
