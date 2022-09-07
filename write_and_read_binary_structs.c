@@ -47,6 +47,12 @@ bool write_data(char *filename, Person *personData, Tractor *tractorData){
      if(fwrite(personData,sizeof(Person),1,file)!=1){
         return false;
      }
+     if(fwrite(personData,sizeof(Person),1,file)!=1){
+        return false;
+     }
+     if(fwrite(tractorData,sizeof(Tractor),1,file)!=1){
+        return false;
+     }
      if (fclose(file) == EOF) return false;
      return true;
 }
@@ -61,9 +67,19 @@ void print_data(char *filename){
   // if fopen() failed to open the file, return NULL
   if (file == NULL) return;
   Person joshua;
+  Tractor tim;
   fread(&joshua, sizeof(Person), 1, file);
-  printf("%s\n\r",joshua.name);
-  printf("%lf\n\r",joshua.iq);
-  printf("%d\n\r", joshua.age);
+  printf("Name: %s\n\r",joshua.name);
+  printf("IQ: %lf\n\r",joshua.iq);
+  printf("Age: %d\n\r", joshua.age);
+  fread(&joshua, sizeof(Person), 1, file);
+  printf("Name: %s\n\r",joshua.name);
+  printf("IQ: %lf\n\r",joshua.iq);
+  printf("Age: %d\n\r", joshua.age);
+  fread(&tim, sizeof(tim), 1, file);
+  printf("Name: %s\n\r",tim.name);
+  printf("Mileage: %d\n\r",tim.mileage);
+  printf("Age: %d\n\r", tim.age);
+  printf("Brand: %s\n\r", tim.brand);
   }
 
